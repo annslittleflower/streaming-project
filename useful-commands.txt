@@ -1,0 +1,4 @@
+melt pirate.mp4 -attach dynamictext:"This cat is awesome" bgcolour=0x55555555 in=0 out=400 -consumer avformat:katWithText.mp4 vcodec=libxvid acodec=libmp3lame -channel_layout N
+
+
+melt pirate.mp4 -attach dynamictext:"This cat is awesome" bgcolour=0x55555555 in=0 out=400 -consumer avformat:katWithText.mp4 vcodec=libx264 acodec=libmp3lame
