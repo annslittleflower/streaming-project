@@ -2,3 +2,15 @@ melt pirate.mp4 -attach dynamictext:"This cat is awesome" bgcolour=0x55555555 in
 
 
 melt pirate.mp4 -attach dynamictext:"This cat is awesome" bgcolour=0x55555555 in=0 out=400 -consumer avformat:katWithText.mp4 vcodec=libx264 acodec=libmp3lame
+
+
+blender -b test.blend -o ~/Desktop/streaming/blender-stuff/rendered/ -F AVIJPEG -x 1  -s 0 -e 72 -a
+
+
+melt 0000-0072.avi -audio-track ../test.mp3 out=71 -consumer avformat:withTrack.avi
+
+
+
+
+
+melt 0000-0072.avi -attach dynamictext:"This cat is awesome" in=24 valign="middle" halign="center" size="60"  -audio-track ../test.mp3 out=71 -consumer avformat:withTrackAndText.avi
